@@ -2,7 +2,6 @@ FROM node:stretch-slim
 
 WORKDIR /usr/login
 
-COPY *.json ./
 COPY *.js ./
 
 RUN npm install
