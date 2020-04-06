@@ -18,7 +18,7 @@ app.post('/login', jsonParser, async function (req, res) {
     res.send(result);
 })
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('It works!'))
 
 // Start server and establish connection to db
 app.listen(port, () => {
