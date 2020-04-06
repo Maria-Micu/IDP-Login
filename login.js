@@ -13,7 +13,7 @@ var jsonParser = bodyParser.json()
 
 app.post('/login', jsonParser, async function (req, res) {
     
-    const [result, fields] = await promisePool.query(`SELECT guid, username FROM users where username = '${req.body.username}' and password = '${req.body.password}'`)
+    const [result, fields] = await promisePool.query(`SELECT guid, user FROM login where user = '${req.body.username}' and password = '${req.body.password}'`)
 
     res.send(result);
 })
