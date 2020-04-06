@@ -24,7 +24,7 @@ app.get('/', (req, res) => res.send('It works!'))
 app.listen(port, () => {
 
     const pool = mysql.createPool({
-        host: 'db-service',
+        host: 'database',
         user: 'root',
         database: 'mycompanydb',
         password: 'admin',
