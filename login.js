@@ -10,10 +10,9 @@ const SERVICE_NAME = "Login";
 
 /*
 // Endpoints
-const MONITORING_URL = "http://monitoring-service:5005/log";
-// const GET_CART_URL = "http://cart-service:5002/cart/";
 const GET_CART_URL = "http://cart-service:5002/cart/";
 */
+const MONITORING_URL = "http://monitoring:5005/log";
 
 var promisePool;
 
