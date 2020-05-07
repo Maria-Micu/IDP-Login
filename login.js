@@ -8,11 +8,9 @@ const port = 5001
 
 const SERVICE_NAME = "Login";
 
-/*
 // Endpoints
-const GET_CART_URL = "http://cart-service:5002/cart/";
-*/
 const MONITORING_URL = "http://monitoring:5005/log";
+const GET_FAV_URL = "http://favorites:5002/fav/";
 
 var promisePool;
 
@@ -28,13 +26,13 @@ app.post('/login', jsonParser, async function (req, res) {
     const [result, fields] = await promisePool.query(`SELECT guid, user FROM login where user = '${req.body.username}' and password = '${req.body.password}'`)
     postAsyncLog(`Results fetched: ${result}`)
 
-    /*const cartDetails = await fetchCartForGuid(result[0].guid);
+    const favDetails = await fetchFavForGuid(result[0].guid);
 
     const respondeJson = {
         'userDetails': result,
-        'cartDetails': cartDetails.data.cartDetails
+        'favDetails': favDetails.data.favDetails
     }
-    */
+    
     res.send(result);
 })
 
@@ -58,17 +56,14 @@ const postAsyncLog = async message => {
     }
 };
 
-/*
-const fetchCartForGuid = async guid => {
+const fetchFavForGuid = async guid => {
     try {
-        const response = await axios.get(GET_CART_URL + guid);
-
+        const response = await axios.get(GET_FAV_URL + guid);
         return response;
     } catch (error) {
         console.log(error);
     }
 };
-*/
 
 // Start server and establish connection to db
 app.listen(port, () => {
