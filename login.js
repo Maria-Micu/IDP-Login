@@ -10,7 +10,7 @@ const SERVICE_NAME = "Login";
 
 // Endpoints
 const MONITORING_URL = "http://monitoring:5005/log";
-const GET_FAV_URL = "http://favorites:5002/fav/";
+const GET_FAV_URL = "http://favorites:5002/favorites/";
 
 var promisePool;
 
